@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}Cart | ElectroHub{% endblock %}
+
+{% block content %}
+<section class="cart-layout">
+    <div class="panel">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">Your cart</p>
+                <h1>Ready to check out?</h1>
+            </div>
+        </div>
+
+        {% if cart_items %}
+        <div class="cart-list">
+            {% for item in cart_items %}
+            <article class="cart-card">
+                <div>
+                    <span class="product-tag">{{ item.product.category }}</span>
+                    <h3>{{ item.product.name }}</h3>
+                    <p>{{ item.product.description }}</p>
+                </div>
+
+                <form class="cart-form" method="post" action="{{ url_for('update_cart', product_id=item.product.id) }}">
+                    <label for="quantity-{{ item.product.id }}">Qty</label>
+                    <input id="quantity-{{ item.product.id }}" name="quantity" type="number" min="0" value="{{ item.quantity }}">
+                    <button type="submit">Update</button>
+                </form>
+
+                <div class="cart-price">
+                    <strong>{{ item.line_total | currency }}</strong>
+                    <form method="post" action="{{ url_for('remove_from_cart', product_id=item.product.id) }}">
+                        <button class="secondary-button" type="submit">Remove</button>
+                    </form>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="empty-state">
+            <h3>Your cart is empty</h3>
+            <p>Browse categories and add some electronics to get started.</p>
+            <a class="primary-link" href="{{ url_for('categories') }}">Explore products</a>
+        </div>
+        {% endif %}
+    </div>
+
+    <aside class="panel summary-card">
+        <h2>Order summary</h2>
+        <div class="summary-row">
+            <span>Subtotal</span>
+            <strong>{{ subtotal | currency }}</strong>
+        </div>
+        <div class="summary-row">
+            <span>Shipping</span>
+            <strong>{{ shipping | currency }}</strong>
+        </div>
+        <div class="summary-row total">
+            <span>Total</span>
+            <strong>{{ total | currency }}</strong>
+        </div>
+        <button {% if not cart_items %}disabled{% endif %}>Proceed to checkout</button>
+    </aside>
+</section>
+{% endblock %}

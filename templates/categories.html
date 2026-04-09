@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Categories | ElectroHub{% endblock %}
+
+{% block content %}
+<section class="panel">
+    <div class="section-heading">
+        <div>
+            <p class="eyebrow">Catalog</p>
+            <h1>Browse categories</h1>
+        </div>
+    </div>
+
+    <div class="filter-row">
+        {% for category in categories %}
+        <a class="filter-pill {% if category == selected_category %}active{% endif %}" href="{{ url_for('categories', category=category) }}">{{ category }}</a>
+        {% endfor %}
+    </div>
+
+    <div class="product-grid">
+        {% for product in products %}
+        <article class="product-card">
+            <span class="product-tag">{{ product.tag }}</span>
+            <h3>{{ product.name }}</h3>
+            <p>{{ product.description }}</p>
+            <div class="product-meta">
+                <span>{{ product.category }}</span>
+                <strong>{{ product.price | currency }}</strong>
+            </div>
+            <form method="post" action="{{ url_for('add_to_cart', product_id=product.id) }}">
+                <input type="hidden" name="next_page" value="categories">
+                <button type="submit">Add to cart</button>
+            </form>
+        </article>
+        {% else %}
+        <div class="empty-state">
+            <h3>No products in this category yet</h3>
+            <p>Try another category to explore more electronics.</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

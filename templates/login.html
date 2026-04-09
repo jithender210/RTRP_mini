@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Login | ElectroHub{% endblock %}
+{% block page_class %}auth-page{% endblock %}
+
+{% block content %}
+<section class="auth-layout">
+    <div class="auth-copy">
+        <p class="eyebrow">Smart shopping starts here</p>
+        <h1>ELECTRO-HUB</h1>
+        <p>Track orders, browse fresh tech, and manage your cart from one clean workspace.</p>
+
+        
+            
+        </div>
+    </div>
+
+    <form class="auth-card" method="post">
+        <h2>Welcome back</h2>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" required>
+
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" placeholder="Enter your password" required>
+
+        <button type="submit">Login</button>
+        <p class="auth-switch">No account yet? <a href="{{ url_for('register') }}">Create one</a></p>
+        
+    </form>
+</section>
+{% endblock %}

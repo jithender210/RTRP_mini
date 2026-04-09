@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard | ElectroHub{% endblock %}
+
+{% block content %}
+<section class="hero-panel">
+    <div>
+        <p class="eyebrow">Dashboard</p>
+        <h1>Welcome, {{ user.name }}.</h1>
+        <p>Discover standout electronics, compare categories, and keep your cart ready for checkout.</p>
+    </div>
+    <div class="hero-stats">
+        <article>
+            <strong>{{ featured_products|length }}</strong>
+            <span>Featured products</span>
+        </article>
+        <article>
+            <strong>{{ categories|length }}</strong>
+            <span>Categories</span>
+        </article>
+        <article>
+            <strong>{{ cart_count }}</strong>
+            <span>Items in cart</span>
+        </article>
+    </div>
+</section>
+
+<section class="content-grid">
+    <div class="panel">
+        <div class="section-heading">
+            
+            <h2>Shop by category</h2>
+            <a href="{{ url_for('categories') }}">View all</a>
+        </div>
+        <div class="chip-grid">
+            {% for category in categories %}
+            <a class="chip" href="{{ url_for('categories', category=category) }}">{{ category }}</a>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="panel">
+        <div class="section-heading">
+            <h2>Featured products</h2>
+            <a href="{{ url_for('categories') }}">Browse catalog</a>
+        </div>
+        <div class="product-grid">
+            {% for product in featured_products %}
+            <article class="product-card">
+                <span class="product-tag">{{ product.tag }}</span>
+                <h3>{{ product.name }}</h3>
+                <p>{{ product.description }}</p>
+                <div class="product-meta">
+                    <span>{{ product.category }}</span>
+                    <strong>{{ product.price | currency }}</strong>
+                </div>
+                <form method="post" action="{{ url_for('add_to_cart', product_id=product.id) }}">
+                    <input type="hidden" name="next_page" value="dashboard">
+                    <button type="submit">Add to cart</button>
+                </form>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
