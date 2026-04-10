@@ -290,9 +290,13 @@ button:disabled {
 
 .content-grid,
 .product-grid {
-    display: grid;
+    display: flex;
     gap: 1.25rem;
     padding: 2rem;
+    flex-direction: column-reverse;
+}
+.product-grid{
+    display: grid;
 }
 
 .content-grid {

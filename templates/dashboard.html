@@ -6,7 +6,7 @@
 <section class="hero-panel">
     <div>
         <p class="eyebrow">Dashboard</p>
-        <h1>Welcome, {{ user.name }}.</h1>
+        <h1>Welcome {{ user}},</h1>
         <p>Discover standout electronics, compare categories, and keep your cart ready for checkout.</p>
     </div>
     <div class="hero-stats">
@@ -34,6 +34,7 @@
         </div>
         <div class="chip-grid">
             {% for category in categories %}
+            
             <a class="chip" href="{{ url_for('categories', category=category) }}">{{ category }}</a>
             {% endfor %}
         </div>

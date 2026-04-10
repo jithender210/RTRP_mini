@@ -1,8 +1,22 @@
 from functools import wraps
-
+import sqlite3
 from flask import Flask, flash, redirect, render_template, request, session, url_for
 
+def init_db():
+    conn = sqlite3.connect("database.db")
+    cursor = conn.cursor()
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS users (
+            id INTEGER PRIMARY KEY,
+            name TEXT,
+            email TEXT UNIQUE,
+            password TEXT
+        )
+    """)
+    conn.commit()
+    conn.close()
 
+init_db()
 app = Flask(__name__)
 app.secret_key = "electronics-store-demo-secret"
 
@@ -58,13 +72,6 @@ PRODUCTS = [
     },
 ]
 
-USERS = {
-    "demo@electrohub.com": {
-        "name": "Demo User",
-        "password": "demo123",
-    }
-}
-
 
 def format_currency(value):
     return f"Rs. {value:,.0f}"
@@ -102,25 +109,27 @@ def index():
     return redirect(url_for("login"))
 
 
-@app.route("/register", methods=["GET", "POST"])
+@app.route('/register', methods=["GET","POST"])
 def register():
     if request.method == "POST":
-        name = request.form.get("name", "").strip()
-        email = request.form.get("email", "").strip().lower()
-        password = request.form.get("password", "").strip()
+        name = request.form.get('name')
+        email = request.form.get('email')
+        password = request.form.get('password')
 
-        if not name or not email or not password:
-            flash("All fields are required.", "danger")
-        elif email in USERS:
-            flash("An account with that email already exists.", "danger")
-        else:
-            USERS[email] = {"name": name, "password": password}
-            session["user_email"] = email
-            session["cart"] = {}
-            flash("Registration successful. Welcome to ElectroHub!", "success")
-            return redirect(url_for("dashboard"))
+        conn = sqlite3.connect('database.db')
+        cursor = conn.cursor()
+        print(name, email, password)
+        cursor.execute(
+            "INSERT INTO users (name, email, password) VALUES (?, ?, ?)",
+            (name, email, password)
+        )
 
-    return render_template("register.html")
+        conn.commit()
+        conn.close()
+
+        return redirect(url_for('login'))
+
+    return render_template('register.html')
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -128,13 +137,18 @@ def login():
     if request.method == "POST":
         email = request.form.get("email", "").strip().lower()
         password = request.form.get("password", "").strip()
-        user = USERS.get(email)
-
-        if user and user["password"] == password:
+        conn = sqlite3.connect('database.db')
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM users WHERE email = ? AND password = ?", (email, password))
+        user = cursor.fetchone()
+        if user:
             session["user_email"] = email
-            session.setdefault("cart", {})
-            flash(f"Welcome back, {user['name']}!", "success")
+            session["cart"] = {}
+
+
             return redirect(url_for("dashboard"))
+        else:
+            return render_template("login.html", error="Invalid email or password.")    
 
         flash("Invalid email or password.", "danger")
 
@@ -153,14 +167,23 @@ def logout():
 def dashboard():
     featured_products = PRODUCTS[:4]
     categories = sorted({product["category"] for product in PRODUCTS})
-    user = USERS.get(session["user_email"])
+
+    conn = sqlite3.connect("database.db")
+    cursor = conn.cursor()
+
+    user = cursor.execute(
+        "SELECT * FROM users WHERE email = ?",
+        (session["user_email"],)
+    ).fetchone()
+    
+    conn.close()
+
     return render_template(
         "dashboard.html",
         featured_products=featured_products,
         categories=categories,
-        user=user,
+        user=user[1],
     )
-
 
 @app.route("/categories")
 @login_required
