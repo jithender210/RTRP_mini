@@ -34,8 +34,12 @@
         </div>
         <div class="chip-grid">
             {% for category in categories %}
+            <div class="chip-item">
             
-            <a class="chip" href="{{ url_for('categories', category=category) }}">{{ category }}</a>
+            <img class= "chip-image" src="{{ category.img }}" alt="{{ category.name }} image">
+            <a class="chip" href="{{ url_for('categories', category=category.name) }}">{{ category.name }}</a>
+            
+            </div>
             {% endfor %}
         </div>
     </div>
@@ -49,6 +53,7 @@
             {% for product in featured_products %}
             <article class="product-card">
                 <span class="product-tag">{{ product.tag }}</span>
+                <IMG class="product-img" src="{{ product.img_url }}" alt="{{ product.name }} image">
                 <h3>{{ product.name }}</h3>
                 <p>{{ product.description }}</p>
                 <div class="product-meta">

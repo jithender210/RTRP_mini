@@ -378,8 +378,14 @@ button:disabled {
 .cart-card {
     grid-template-columns: 1.4fr 0.7fr 0.5fr;
     align-items: center;
+    display: flex;
 }
-
+.card-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 .cart-form {
     display: grid;
     gap: 0.5rem;
@@ -395,6 +401,13 @@ button:disabled {
     align-self: start;
     display: grid;
     gap: 1rem;
+    background: var(--surface);
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(18px);
+    border-radius: 28px;
+    padding: 2rem;
+    width: 500px;
 }
 
 .summary-row.total {
@@ -429,9 +442,7 @@ button:disabled {
 }
 
 @media (max-width: 640px) {
-    .page-shell {
-        width: min(100% - 1rem, 1180px);
-    }
+    
 
     .auth-copy,
     .panel,
@@ -439,4 +450,46 @@ button:disabled {
     .hero-panel {
         padding: 1.4rem;
     }
+}
+.page-shell{
+    margin: 0 20px;
+    padding: 2rem 0 3rem;
+}
+.chip-item {
+    width: 200px;
+    height: 260px;
+    display: grid;
+    border-radius: 10px;
+    
+}
+.chip-image {
+    border-radius: 10px;
+    width: 195px;
+    padding: 10px;
+}
+.chip-item:hover{
+    
+    box-shadow: 0 0 8px black,
+                0 0 8px black,
+                0 0 8px black;
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
+.product-img {
+    border-radius: 10px;
+    width: 195px;
+    padding: 20px;
+} 
+p{
+    margin-top: auto;
+}
+h3 {
+    width: 200px;
+    height: 20px;
+    margin-bottom: auto;
+}
+.product-card:hover{
+    
+    transform: translateY(-10px);
+    transition: all 0.5s ease;
 }

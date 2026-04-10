@@ -17,6 +17,7 @@ def init_db():
     conn.close()
 
 init_db()
+ 
 app = Flask(__name__)
 app.secret_key = "electronics-store-demo-secret"
 
@@ -24,52 +25,55 @@ app.secret_key = "electronics-store-demo-secret"
 PRODUCTS = [
     {
         "id": 1,
-        "name": "NovaBook Air",
-        "category": "Laptops",
-        "price": 89999,
+        "name": "Boat airdopes 300",
+        "category": "Audio",
+        "Brand": "boat",
+        "price": 1099,
         "tag": "Best Seller",
-        "description": "Thin, fast, and ready for work or play.",
+        "img_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJ5UVHXQw8Lr5krVCLSvu6Lr0cuwRGVPsY5A&s",
+        "description": "Boat Airdopes 300, Cinematic Spatial Audio, 50HRS Battery, 4Mic AI ENx, Fast Charge, App Support, Low Latency, IPX4, v5.3 Bluetooth Earbuds, TWS Ear Buds Wireless Earphones with mic (Gunmetal Black)."
     },
     {
         "id": 2,
-        "name": "Pulse X Pro",
-        "category": "Smartphones",
-        "price": 64999,
-        "tag": "New Launch",
-        "description": "Flagship power with a stunning OLED display.",
+        "name": "Tribit XSound Go Wireless Bluetooth ",
+        "category": "Audio",
+        "Brand": "Tribit",
+        "price": 2843,
+        "tag":"New Launch",
+        "img_url":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJBFjKVaIM69-xWVDguu3bEk7IR9gQ50SrDA&s",
+        "description": "Tribit Updated Version XSound Go Wireless Bluetooth 5.3 Speakers with Loud Stereo Sound & Rich Bass 16W,24H Playtime,150 ft Bluetooth Range,Outdoor Lightweight IPX7 Waterproof,Built-in Mic (Black)"
     },
     {
         "id": 3,
-        "name": "EchoBuds Max",
+        "name": "boAt Rockerz 480",
         "category": "Audio",
-        "price": 9999,
-        "tag": "Hot Deal",
-        "description": "Immersive sound with all-day battery life.",
+        "Brand":"boat",
+        "price":1599 ,
+        "tag":"Hot Deal",
+        "img_url":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSldl-0EEgC2zcQLgUEfc8ldifBUkOPLoekHw&s",
+        "description": "boAt Rockerz 480, RGB LEDs,6 Light Modes, 40mm Drivers,Beast Mode, 60H Battery, ENx Tech, Stream Ad Free Music via App Support, Bluetooth Headphones, Wireless Over Ear Headphone with Mic (Black Sabre)"
     },
     {
         "id": 4,
-        "name": "VisionPad 11",
-        "category": "Tablets",
-        "price": 42999,
-        "tag": "Top Rated",
-        "description": "Portable productivity for creators and students.",
+        "name": "JBL Partybox 320",
+        "category": "Audio",
+         "Brand":"JBL",
+        "price":44999 ,
+        "tag":"Top Deal",
+        "img_url":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRE1gk-x9xNwY4dz16VwVSxcE13_fVx71RnIQ&s",
+        "description":"Connectivity Technology=Bluetooth ,Speaker Maximum Output Power=240 Watts,Frequency Response=40 Hz,Audio Output Mode=Stereo",
+        "About":"( Replacement, Installation & On-Site Repair within 24 hours( in Select cities). Powerful JBL Pro Sound Rock out with powerful JBL Pro Sound from two 6.5” woofers that deliver clean, precise, deep bass even at top volume and a pair of 25mm dome tweeters that produce crystal clear highs. Indoors or out, you can fill a space the size of a tennis court with music.,Futuristic Light Show: With Colors synched to the Beat and with Customizable Strobes and Patterns that dazzle your eyes, party with an unique, immersive Audiovisual experience,Up to 18 hours of play time Party from dusk till dawn with up to 18 hours of play time on a single charge. And if that’s not enough, just swap out the replaceable battery* and keep on dancing. Or if you just need an extra boost, 10 minutes fast charge gets you an extra 2 hours of playtime)"
     },
     {
         "id": 5,
-        "name": "Orbit Watch S",
-        "category": "Wearables",
-        "price": 14999,
-        "tag": "Trending",
-        "description": "Health tracking and smart controls on your wrist.",
-    },
-    {
-        "id": 6,
-        "name": "Volt Gaming Rig",
-        "category": "Gaming",
-        "price": 124999,
-        "tag": "Premium",
-        "description": "Desktop-class performance in a sleek build.",
-    },
+        "name": "Noise Airwave Bluetooth",
+        "category": "Audio",
+        "Brand":"Noise",
+        "price":999 ,
+        "tag":"Top Rated",
+        "img_url":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXNZBlPbRJpANnXznb7xVyouTuupmIrZJsJw&s",
+        "description": "Up to 50 hour playtime:- For playlists that you never want to hit pause on, without needing to worry about running out of chargem 10mm Driver:- Dive into the world of balanced audio quality.ENC for superior calling:- Experience a clear calling experience when you talk on the phone with Environmental Noise Cancellation.Low Latency (up to 50ms):- Gaming, talking or listening to music - it’s a lag-free zone with up to 50ms of low latency.",
+    }
 ]
 
 
@@ -165,17 +169,26 @@ def logout():
 @app.route("/dashboard")
 @login_required
 def dashboard():
-    featured_products = PRODUCTS[:4]
-    categories = sorted({product["category"] for product in PRODUCTS})
-
-    conn = sqlite3.connect("database.db")
+    conn = sqlite3.connect('database.db')
     cursor = conn.cursor()
+
+    cursor.execute('SELECT * FROM categories')
+    db_categories = cursor.fetchall()
+    categories = [
+        {"img": row[0], "name": row[1]}
+        for row in db_categories
+    ]
+
+    featured_products = PRODUCTS[:4]
+
+    # categories from PRODUCTS (clean way)
+    
 
     user = cursor.execute(
         "SELECT * FROM users WHERE email = ?",
         (session["user_email"],)
     ).fetchone()
-    
+
     conn.close()
 
     return render_template(
@@ -184,19 +197,32 @@ def dashboard():
         categories=categories,
         user=user[1],
     )
+    
 
 @app.route("/categories")
 @login_required
 def categories():
     selected_category = request.args.get("category", "All")
-    categories_list = ["All"] + sorted({product["category"] for product in PRODUCTS})
+    conn=sqlite3.connect('database.db')
+    cursor=conn.cursor()
+    cursor.execute('''SELECT * FROM categories''')
+    db_categories=cursor.fetchall()
+    categories = [
+        {"img": row[0], "name": row[1]}
+        for row in db_categories
+    ]
 
+    
+    categories_list = ["All"] + sorted({product["name"] for product in categories})
+    
     if selected_category == "All":
         filtered_products = PRODUCTS
+        
     else:
         filtered_products = [
             product for product in PRODUCTS if product["category"] == selected_category
         ]
+        
 
     return render_template(
         "categories.html",

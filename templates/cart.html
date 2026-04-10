@@ -16,23 +16,27 @@
         <div class="cart-list">
             {% for item in cart_items %}
             <article class="cart-card">
-                <div>
+                <img src="{{ item.product.img_url }}" alt="{{ item.product.name}}" class="cart_img">
+                <div class="card-img">
+
                     <span class="product-tag">{{ item.product.category }}</span>
                     <h3>{{ item.product.name }}</h3>
                     <p>{{ item.product.description }}</p>
-                </div>
+                
 
                 <form class="cart-form" method="post" action="{{ url_for('update_cart', product_id=item.product.id) }}">
                     <label for="quantity-{{ item.product.id }}">Qty</label>
                     <input id="quantity-{{ item.product.id }}" name="quantity" type="number" min="0" value="{{ item.quantity }}">
                     <button type="submit">Update</button>
                 </form>
+                
 
                 <div class="cart-price">
                     <strong>{{ item.line_total | currency }}</strong>
                     <form method="post" action="{{ url_for('remove_from_cart', product_id=item.product.id) }}">
                         <button class="secondary-button" type="submit">Remove</button>
                     </form>
+                </div>
                 </div>
             </article>
             {% endfor %}
@@ -46,7 +50,7 @@
         {% endif %}
     </div>
 
-    <aside class="panel summary-card">
+    <aside class="summary-card">
         <h2>Order summary</h2>
         <div class="summary-row">
             <span>Subtotal</span>
