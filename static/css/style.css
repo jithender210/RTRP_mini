@@ -352,6 +352,8 @@ button:disabled {
     display: inline-flex;
     width: fit-content;
     padding: 0.4rem 0.7rem;
+    height:fit-content;
+    align-items: center;
     border-radius: 999px;
     font-size: 0.8rem;
     font-weight: 700;
@@ -469,6 +471,9 @@ button:disabled {
     .hero-panel {
         padding: 1.4rem;
     }
+}
+.page-shell{
+    padding: 2rem 0 15rem; width: auto; 
 }
 /* .page-shell{
     margin: 0 auto;

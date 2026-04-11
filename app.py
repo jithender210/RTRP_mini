@@ -410,7 +410,7 @@ def dashboard():
 def categories():
     selected_category = request.args.get("category", "All")
     selected_brand=request.args.get("brand")
-    price_range=request.args.get("prize_range")
+    price_range=request.args.get("price_range")
     conn=sqlite3.connect('database.db')
     cursor=conn.cursor()
     cursor.execute('''SELECT * FROM categories''')
@@ -441,7 +441,12 @@ def categories():
             p for p in filtered_products
             if min_price <= p["price"] <= max_price
         ]
-    brands = sorted({p.get("Brand", "Unknown") for p in PRODUCTS if p.get("Brand")})
+    if selected_category =="All":
+        brands = sorted({p.get("Brand") for p in PRODUCTS if p.get("Brand")})
+    else:
+        brands=sorted({ p.get("Brand") for p in PRODUCTS if p.get("Brand") and p.get("category") == selected_category})
+
+    
     #filter_brand=[  product["Brand"]for product in PRODUCTS ]
     return render_template(
         "categories.html",
