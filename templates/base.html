@@ -22,7 +22,7 @@
     </header>
     {% endif %}
 
-    <main class="page-shell {% block page_class %}{% endblock %}">
+    <main class="page-shell {% block page_class %}{% endblock %}" style="padding: 2rem 0 15rem; width: 1440px; ">
         {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
             <section class="flash-stack">

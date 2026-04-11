@@ -72,7 +72,7 @@ PRODUCTS = [
         "price":999 ,
         "tag":"Top Rated",
         "img_url":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXNZBlPbRJpANnXznb7xVyouTuupmIrZJsJw&s",
-        "description": "Up to 50 hour playtime:- For playlists that you never want to hit pause on, without needing to worry about running out of chargem 10mm Driver:- Dive into the world of balanced audio quality.ENC for superior calling:- Experience a clear calling experience when you talk on the phone with Environmental Noise Cancellation.Low Latency (up to 50ms):- Gaming, talking or listening to music - it’s a lag-free zone with up to 50ms of low latency.",
+        "description": " Noise Newly Launched Airwave Crest Bluetooth in Ear Neckband with Metallic Shine on Earbuds,50H of Playtime, EQ Modes, Dual Device Pairing,13mm PEEK+PU Driver, BT v5.4",
     }
 ]
 

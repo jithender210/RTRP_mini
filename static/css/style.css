@@ -373,32 +373,43 @@ button:disabled {
 .cart-list {
     display: grid;
     gap: 1rem;
+    
 }
 
 .cart-card {
     grid-template-columns: 1.4fr 0.7fr 0.5fr;
-    align-items: center;
+    align-items: flex-start;
     display: flex;
+    height:300px;
 }
 .card-img {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 680px;
 }
 .cart-form {
-    display: grid;
-    gap: 0.5rem;
+    display: flex;
+    gap: 4rem;
+    justify-content: center;
+    align-items: center;
 }
 
+
 .cart-price {
-    display: grid;
+    display: flex;
     gap: 0.7rem;
     justify-items: end;
+    align-content: space-between;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .summary-card {
     align-self: start;
+    margin-left: auto;
+    margin-right:30px;
     display: grid;
     gap: 1rem;
     background: var(--surface);
@@ -407,7 +418,7 @@ button:disabled {
     backdrop-filter: blur(18px);
     border-radius: 28px;
     padding: 2rem;
-    width: 500px;
+    width: 400px;
 }
 
 .summary-row.total {
@@ -442,6 +453,11 @@ button:disabled {
 }
 
 @media (max-width: 640px) {
+    .auth-page{
+    width: min(1180px, calc(100% - 2rem));
+    margin: 0 auto;
+    padding: 2rem 0 3rem;
+}
     
 
     .auth-copy,
@@ -451,16 +467,23 @@ button:disabled {
         padding: 1.4rem;
     }
 }
-.page-shell{
-    margin: 0 20px;
+/* .page-shell{
+    margin: 0 auto;
     padding: 2rem 0 3rem;
-}
+} */
 .chip-item {
     width: 200px;
     height: 260px;
     display: grid;
     border-radius: 10px;
     
+}
+.auth-page{
+    margin-top:200px;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
 }
 .chip-image {
     border-radius: 10px;
@@ -484,12 +507,48 @@ p{
     margin-top: auto;
 }
 h3 {
-    width: 200px;
-    height: 20px;
-    margin-bottom: auto;
+    width: 500px;
+    height: auto;            
+    padding-left: 5px;
+    margin: 0 auto 10px 0;   
+    font-size: 30px;
+    text-align: left;
+    display: block;          
 }
 .product-card:hover{
     
     transform: translateY(-10px);
     transition: all 0.5s ease;
 }
+.card-panel{
+    width : 1000px
+}
+h2{
+    width: 200px;
+    font-size: 20px;
+    height: 20px;
+    margin-bottom: auto;
+}
+.remove-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border: none;
+    background-color: #f5f5f5;
+    color: #555;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  .remove-btn:hover {
+    background-color: #ffe5e5;
+    color: #d32f2f;
+  }
+
+  .remove-btn i {
+    font-size: 16px;
+  }

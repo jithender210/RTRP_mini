@@ -14,23 +14,26 @@
     <div class="filter-row">
         {% for category in categories %}
         <a class="filter-pill {% if category == selected_category %}active{% endif %}" href="{{ url_for('categories', category=category) }}">{{ category }}</a>
+        
         {% endfor %}
     </div>
 
     <div class="product-grid">
         {% for product in products %}
-        <article class="product-card">
-            <span class="product-tag">{{ product.tag }}</span>
-            <h3>{{ product.name }}</h3>
-            <p>{{ product.description }}</p>
-            <div class="product-meta">
-                <span>{{ product.category }}</span>
-                <strong>{{ product.price | currency }}</strong>
-            </div>
-            <form method="post" action="{{ url_for('add_to_cart', product_id=product.id) }}">
-                <input type="hidden" name="next_page" value="categories">
-                <button type="submit">Add to cart</button>
-            </form>
+        <article class="product-card" style="height: 691px;">
+                <span class="product-tag">{{ product.tag }}</span>
+                <IMG class="product-img" src="{{ product.img_url }}" alt="{{ product.name }} image">
+                <h2>{{ product.name }}</h2>
+                <p>{{ product.description }}</p>
+                <div class="product-meta">
+                    <span>{{ product.category }}</span>
+                    <strong>{{ product.price | currency }}</strong>
+                </div>
+                <form method="post" action="{{ url_for('add_to_cart', product_id=product.id) }}">
+                    <input type="hidden" name="next_page" value="dashboard">
+                    <button type="submit">Add to cart</button>
+                </form>
+            </article>
         </article>
         {% else %}
         <div class="empty-state">
