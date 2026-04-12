@@ -3,7 +3,7 @@
 {% block title %}Cart | ElectroHub{% endblock %}
 
 {% block content %}
-<section class="cart-layout" style="width: 1500px">
+<section class="cart-layout" >
     <div class="card-panel">
         <div class="section-heading">
             <div>
@@ -68,7 +68,29 @@
             <span>Total</span>
             <strong>{{ total | currency }}</strong>
         </div>
-        <button {% if not cart_items %}disabled{% endif %}>Proceed to checkout</button>
+        {% if address %}
+<div class="summary-row" style="flex-direction: column; align-items: flex-start;">
+    <span><strong>Delivery Address</strong></span>
+    
+    <p style="margin: 5px 0;">
+        {{ address.name }}
+    </p>
+    <p style="margin: 0;">
+        {{ address.address }}
+    </p>
+    <p style="margin: 0;">
+        {{ address.city }} - {{ address.pincode }}
+    </p>
+</div>
+{% endif %}
+       {% if address %}
+    <button>Place Order</button>
+{% else %}
+    <a href="{{ url_for('checkout') }}">
+        <button>Proceed to Checkout</button>
+    </a>
+{% endif %}
+</a>
     </aside>
 </section>
 {% endblock %}

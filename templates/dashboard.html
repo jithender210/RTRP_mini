@@ -28,24 +28,6 @@
 <section class="content-grid">
     <div class="panel">
         <div class="section-heading">
-            
-            <h2>Shop by category</h2>
-            <a href="{{ url_for('categories') }}">View all</a>
-        </div>
-        <div class="chip-grid">
-            {% for category in categories %}
-            <div class="chip-item">
-            
-            <img class= "chip-image" src="{{ category.img }}" alt="{{ category.name }} image">
-            <a class="chip" href="{{ url_for('categories', category=category.name) }}">{{ category.name }}</a>
-            
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-
-    <div class="panel">
-        <div class="section-heading">
             <h2>Featured products</h2>
             <a href="{{ url_for('categories') }}">Browse catalog</a>
         </div>
@@ -68,6 +50,23 @@
                     <button type="submit">Add to cart</button>
                 </form>
             </article>
+            {% endfor %}
+        </div>
+    </div>
+     <div class="panel" style="margin-top: 25px;">
+        <div class="section-heading">
+            
+            <h2>Shop by category</h2>
+            <a href="{{ url_for('categories') }}">View all</a>
+        </div>
+        <div class="chip-grid">
+            {% for category in categories %}
+            <div class="chip-item">
+            
+            <img class= "chip-image" src="{{ category.img }}" alt="{{ category.name }} image">
+            <a class="chip" href="{{ url_for('categories', category=category.name) }}">{{ category.name }}</a>
+            
+            </div>
             {% endfor %}
         </div>
     </div>

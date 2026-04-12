@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="address-panel">
+    <h1>Enter Delivery Address</h1>
+
+    <form method="post">
+        <label>Name</label>
+        <input type="text" name="name" required>
+
+        <label>Address</label>
+        <input type="text" name="address" required>
+
+        <label>City</label>
+        <input type="text" name="city" required>
+
+        <label>Pincode</label>
+        <input type="text" name="pincode" required>
+
+        <button type="submit">Continue to Payment</button>
+    </form>
+</section>
+{% endblock %}

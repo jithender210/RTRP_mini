@@ -171,7 +171,7 @@ PRODUCTS = [
         "tag":"New Launch",
         "vd":"https://www.youtube.com/watch?v=UZ5G0tVwBkI",
         "img_url":"https://m.media-amazon.com/images/I/61dUvabnSmL._AC_UF1000,1000_QL80_.jpg",
-        "description": "Photo Sensor Technology CMOS Video Capture Resolution 5.3K60/50, 4K120/100, 2.7K240/200, 1080p240/200 resolution/fps3 Maximum Focal Length=30 Millimeters Maximum Aperture 2.8 f Flash Memory Type Micro SD, SD Video Capture Format MP4 Supported Audio Format AAC, MP3, PCM, FLAC, Dolby Digital/AC-3 Screen Size 2.27 Inches Connectivity Technology USB"    
+        "description": "Photo Sensor Technology CMOS Video Capture Resolution 5.3K60/50, 4K120/100, 2.7K240/200, 1080p240/200 resolution/fps3 Focal Length=30 Millimeters Maximum Aperture 2.8 f Flash Memory Type Micro SD, SD Video Capture Format MP4 Supported Audio Format AAC, MP3, PCM, FLAC, Dolby Digital/AC-3 Screen Size 2.27 Inches Connectivity Technology USB"    
         },
         {
             "id": 14,
@@ -278,7 +278,216 @@ PRODUCTS = [
      "vd":"https://www.youtube.com/watch?v=9ZVbdBObJLM",
      "img_url":"data:image/webp;base64,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",
      "description": " Lenovo IdeaPad Slim 5 Intel Core Ultra 5 125H 16 (40.6cm) WUXGA-IPS 300Nits Thin & Light Laptop (16GB RAM/1TB SSD/AI PC/Windows 11/Office Home 2024/FHD+IR Camera/1Yr ADP Free/Grey/1.8Kg), 83DC0096IN"
-}
+},
+{
+        "id": 23,
+        "name": "Samsung 24 Flat Monitor",
+        "category": "PC",
+        "price":6649,
+        "tag":"office use",
+        "vd":"https://www.youtube.com/watch?v=0FcjpAUplTc",
+        "img_url":"https://m.media-amazon.com/images/I/71E5tCgikPL._AC_UF1000,1000_QL80_.jpg",
+        "description": "Brand Samsung,Specific Uses For Product Business, Desktop, Entertainment,Screen Size 24 Inches,Resolution FHD 1080p,Aspect Ratio 16:9",
+    },
+
+{
+        "id": 24,
+        "name": "Dell SE2225HM",
+        "category": "PC",
+        "price":6599 ,
+        "tag":"student's choice",
+        "vd":"https://www.amazon.in/live/video/169abecc1e124b438a28f75ffd931a44",
+        "img_url":"https://rukminim2.flixcart.com/image/480/640/xif0q/monitor/3/x/i/-original-imahagy2gcfupfhs.jpeg?q=90",
+        "description": " Brand Dell,Specific Uses For Product Business, Desktop, Entertainment,Screen Size 21 Inches,Resolution FHD 1080p,Aspect Ratio 16:9",
+    },
+{
+        "id": 25,
+        "name": "TECNICO AI Desktop PC",
+        "category": "PC",
+        "price": 12999,
+        "tag":"20% off",
+        "vd":"https://www.youtube.com/watch?v=UC7mc5inDpI",
+        "img_url":"https://m.media-amazon.com/images/I/61E4hhNZnML._AC_UF1000,1000_QL80_.jpg",
+        "description": "Brand TECNICO,Model Name TECI5 416512TE OLYCPU,Operating System Windows 11,CPU Model Core i5,CPU Speed 3 GHz,Cache Size 256 MB,Graphics Card Description Integrated,Graphics Coprocessor Intel HD Graphics 4600 Memory Storage Capacity 512 GB,Specific Uses For Product Business",
+    },
+
+{
+        "id": 26,
+        "name": "ZEBRONICS Transformer PRO Gaming Wireless Keyboard & Mouse",
+        "category": "PC",
+        "price":1699 ,
+        "tag":"exclusive",
+        "vd":"https://www.youtube.com/watch?v=o8hzctrjl5M",
+        "img_url":"https://m.media-amazon.com/images/I/61X18823reL.jpg",
+        "description": "Brand=ZEBRONICS,Colour White,Connectivity,Technology Radio Frequency,Special Feature Ergonomic,Compatible Devices Laptop, Personal Computer",
+    },
+
+{
+        "id": 27,
+        "name": "HP 323sdnw",
+        "category": "Printers",
+        "price":24499 ,
+        "tag":"Best Seller",
+        "vd":"https://www.youtube.com/watch?v=R7snwa6xgkw",
+        "img_url":"https://m.media-amazon.com/images/I/71gLmEKpadL._AC_UF1000,1000_QL80_.jpg",
+        "description": "Brand HP, Connectivity Technology Wi-Fi,Printing Technology Laser,Special Feature Auto-Duplex, Network-Ready,Colour Black,Model Name HP Laser,Printer Output Monochrome,Max Print speed Monochrome 30 ppm,Item Weight 13.79 Kilograms,Product Dimensions 33.5D x 40W x 36.5H Centimeters",
+    },
+
+{
+        "id": 28,
+        "name": "Epson EcoTank L3252",
+        "category": "Printers",
+        "price": 13999,
+        "tag":"Hot Deal",
+        "vd":"https://www.youtube.com/watch?v=D1OIOMcgAlI",
+        "img_url":"https://5.imimg.com/data5/SELLER/Default/2022/3/HU/UW/KN/147282547/ecotank-l3250-wi-fi-all-in-one-ink-tank-printer-black-37-5-x-34-7-x-17-9-500x500.jpg",
+        "description": "Brand=Epson Connectivity Technology Wi-Fi,Printing Technology Epson Heat-Free Technology,Special Feature Network-Ready,Colour Black,Model Name L3252,Printer Output Colour,Maximum Print Speed (Colour) 15 ppm,Max Print speed Monochrome 33 ppm,Item Weight 5600 Grams",
+    },
+{
+        "id": 29,
+        "name": "Canon PIXMA MegaTank G4780",
+        "category": "Printers",
+        "price":19499 ,
+        "tag":"exclusive",
+        "vd":"https://www.youtube.com/watch?v=eXjezTD6n48",
+        "img_url":"https://m.media-amazon.com/images/I/71m3R5jc3IL._AC_UF350,350_QL80_.jpg",
+        "description": "Brand Canon Connectivity Technology USB, Wi-Fi Printing Technology Inkjet Special Feature Auto Document Feeder, Auto-Duplex, Display Screen,Colour White Model Name PIXMA G4780,Printer Output Colour,Maximum Print Speed (Colour) 6 ppm,Max Print speed Monochrome 11 ppm,Item Weight 7500 Grams" },
+{
+        "id": 30,
+        "name": "Brother DCP-T436W",
+        "category": "Printers",
+        "price":13799 ,
+        "tag":"10% off",
+        "vd":"https://www.youtube.com/watch?v=HzefUBp1v88",     
+        "img_url":"https://m.media-amazon.com/images/I/71iYpDZG6AL.jpg",
+        "description": "Brand Brother,Connectivity Technolog USB, Wi-Fi,Printing Technology Inkjet Special Feature Borderless Printing, Email Print, Refillable Ink Tank, Scan To E-Mail,Colour White Model Name DCP-T436W,Printer Output Colour,Maximum Print Speed (Colour) 11 ppm,Max Print speed Monochrome 27 ppm,Item Weight 5.9 Kilograms"
+},
+{
+
+        "id": 31,
+        "name": "iQOO Z10 5G",
+        "category": "Smartphones",
+        "price": 26999,
+        "tag":"50% off",
+        "vd":"https://www.youtube.com/watch?v=qRUsFlDs9hw",
+        "img_url":"https://m.media-amazon.com/images/I/61ca566nQ0L.jpg",
+        "description": "Brand iQOO ,Operating System Funtouch OS 15 based on Android 15 RAM Memory Installed Size 8 GB,CPU Model Snapdragon,CPU Speed 2.5 GHz"
+   
+    },
+{
+        "id": 32,
+        "name": "Samsung Galaxy S25 5G",
+        "category": "Smartphones",
+        "price": 74999,
+        "tag":"25th Anniversary Edition",
+        "vd":"https://www.youtube.com/watch?v=xbZDvBEj_p0",
+        "img_url":"https://m.media-amazon.com/images/I/61D3EdXKG5L.jpg",
+        "description": "Brand Samsung,Operating System Android 15.0,RAM Memory Installed Size 12 GB,CPU Model Snapdragon,CPU Speed 4.47 GHz"
+    },
+{
+        "id": 33,
+        "name": "OnePlus 15R",
+        "category": "Smartphones",
+        "price":50499 ,
+        "tag":"for students",
+        "vd":"https://www.youtube.com/watch?v=P7qgEOfTgzU",
+        "img_url":"https://media-ik.croma.com/prod/https://media.tatacroma.com/Croma%20Assets/Communication/Mobiles/Images/319656_0_bAWkkfUyr.png?updatedAt=1765887986870?tr=w-400",
+        "description": "Brand:OnePlus,Operating System Android 16, OxygenOS 16,RAM Memory Installed Size 12 GB,CPU Speed 3.8 GHz,Memory Storage Capacity256 GB"
+        },
+{
+        "id": 34,
+        "name": "REDMI Note 15 Pro 5G",
+        "category": "Smartphones",
+        "price":30999 ,
+        "tag":"sale",
+        "vd":"https://www.youtube.com/watch?v=d25HkjCJXKE",
+        "img_url":"https://m.media-amazon.com/images/I/81uGa3uCO1L._AC_UF1000,1000_QL80_.jpg",
+        "description": "Brand: Redmi, Operating System: Android 15, Xiaomi HyperOS, RAM Memory Installed Size: 8 GB, Memory Storage Capacity: 256 GB, Model Name: REDMI Note 15 Pro 5G"
+},
+{
+        "id": 35,
+        "name": "XIAOMI Pad 8",
+        "category": "Tablets",
+        "price":33999 ,
+        "tag":"Hot Deal",
+        "vd":"https://www.youtube.com/watch?v=0Fk6TrX2Apo",
+        "img_url":"https://m.media-amazon.com/images/I/71v-dLR1hOL._AC_UF1000,1000_QL80_.jpg",
+        "description": "Brand XIAOMI,Model Name Xiaomi Pad 8,Memory Storage Capacity 128 GB,Screen Size 11.2 Inches,Display Resolution Maximum 3200 x 2136"
+          },
+{
+        "id": 36,
+        "name": "Lenovo Idea Tab Pro",
+        "category": "Tablets",
+        "price": 37499,
+        "tag":"year end sale",
+        "vd":"https://www.youtube.com/watch?v=mDfC3E6Amy0",
+        "img_url":"https://m.media-amazon.com/images/I/71v1k3ZCPKL._AC_UF1000,1000_QL80_.jpg",
+        "description": "Brand=Lenovo Model Name=IdeaTab Pro Memory Storage Capacity 256 GB,Screen Size 12.7 Inches,Display Resolution Maximum 2944x1840 Pixels"
+    },
+{
+        "id": 37,
+        "name": "Samsung Galaxy Tab S10 Lite",
+        "category": "Tablets",
+        "price":36999 ,
+        "tag":"limited offer",
+        "vd":"https://www.youtube.com/watch?v=JCTH2pP4B74",     
+        "img_url":"https://m.media-amazon.com/images/I/71v4SZ7IzdL.jpg",
+        "description": "Brand Samsung Model Name Samsung Galaxy Tab S10 Lite,Memory Storage Capacity 128 GB,Screen Size 10.9 Inches,Display Resolution Maximum 2112 × 1320 Pixels Per Inch"
+    },
+{
+        "id": 38,
+        "name": "Redmi Pad 2 Pro ",
+        "category": "Tablets",
+        "price":25999 ,
+        "tag":"sale",
+        "vd":"https://www.youtube.com/watch?v=mzFAOE7tcN0",
+        "img_url":"https://m.media-amazon.com/images/I/71SIULlPnYL._AC_UF1000,1000_QL80_.jpg",
+        "description": "Brand: Redmi, Model Name: Redmi Pad 2 Pro, Memory Storage Capacity: 128 GB, Screen Size: 12.1 Inches, Display Resolution Maximum: 2560 x 1600 Pixels"
+    },
+
+{
+        "id": 39,
+        "name": "Noise Halo Plus",
+        "category": "wearables",
+        "price":2799 ,
+        "tag":"Hot Deal",
+        "vd":"https://www.amazon.in/live/video/18c4d5c5f44b42b8b946ee52e66e23a4",
+        "img_url":"https://m.media-amazon.com/images/I/71g09REHnkL.jpg",
+        "description":"Operating System android Wearable Computer Type Smart Watch,Special Feature Activity Tracker, Calorie Tracker, Heart Rate Monitor, Notifications, Oxymeter (SpO2)Battery Capacity 300,Connectivity Technology Bluetooth"
+    },
+{
+        "id": 40,
+        "name": "Fastrack Astor FR2 Pro",
+        "category": "wearables",
+        "price":2799 ,
+        "tag":" limited offer",
+        "vd":"https://www.youtube.com/watch?v=bNxFP16s67s",
+        "img_url":"https://m.media-amazon.com/images/I/71rjlGEi+1L._AC_UF1000,1000_QL80_FMwebp_.jpg",
+        "description": "Operating System android,Special Feature Activity,Tracker, Heart Rate Monitor, Multisport Tracker, Phone Call, Stress Tracking,Battery Capacity 1200 MilliampHours,Connectivity,Technology Bluetooth,Wireless Communication Standard Bluetooth"
+    },
+
+{
+        "id": 41,
+        "name": "Samsung Galaxy Ring",
+        "category": "wearables",
+        "price":19999 ,
+        "tag":"Best Seller",
+        "vd":"https://www.youtube.com/watch?v=LYnBakPVSLg",
+        "img_url":"https://m.media-amazon.com/images/I/713NySDNqkL._AC_UF1000,1000_QL80_.jpg",
+        "description": "Memory Storage Capacity 8 MB,Special Feature Activity Tracker, Gesture Control, Heart Rate Monitor, Sleep Monitor ,Battery Capacity 23.5,Connectivity Technology Bluetooth,Wireless Communication ,Standard=Bluetooth"
+    },
+
+{
+        "id": 42,
+        "name": "Boat SmartRing Active ",
+        "category": "wearables",
+        "price": 2999,
+        "tag":"Hot Deal",
+        "vd":"https://www.youtube.com/watch?v=4i3iAynMAsI",
+        "img_url":"https://m.media-amazon.com/images/I/61dndSAaoRL._AC_UF1000,1000_QL80_.jpg",
+        "description": "Operating System SmartwatchSpecial, Feature Camera, Sleep Monitor,Connectivity Technology, Bluetooth Wireless Communication, Standard Bluetooth,Battery Cell Composition Lithium Polymer"
+
+    }
 
 ]
 
@@ -488,6 +697,7 @@ def cart():
         subtotal=subtotal,
         shipping=shipping,
         total=total,
+        address=session.get("address")
     )
 
 
@@ -535,6 +745,23 @@ def remove_from_cart(product_id):
     flash("Item removed from cart.", "info")
     return redirect(url_for("cart"))
 
+
+
+
+@app.route("/checkout", methods=["GET", "POST"])
+@login_required
+def checkout():
+    if request.method == "POST":
+        session["address"] = {
+            "name": request.form.get("name"),
+            "address": request.form.get("address"),
+            "city": request.form.get("city"),
+            "pincode": request.form.get("pincode")
+        }
+
+        return redirect(url_for("cart"))
+
+    return render_template("checkout.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
