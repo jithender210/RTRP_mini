@@ -125,7 +125,7 @@ PRODUCTS = [
         "tag":"Hot Deal",
         "vd":"https://www.youtube.com/watch?v=dtNDz-XO8CU",
         "img_url":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4NnLwtzmOiHHDQRWug28_fPYvYUkmWpIkjQ&s",
-        "description": "Hardware Interface Memory Stick Micro (M2),Compatible Devices Laptop,Data Link Protocol IEEE 802.11ac,Data Transfer Rate 5374 Megabits Per SecondItem Weight0.04 Kilograms,Manufacturer==LANYAO)"
+        "description": "Hardware Interface Memory Stick Micro (M2),Compatible Devices Laptop,Data Link Protocol IEEE 802.11ac,Data Transfer Rate 5374mbps Item Weight 0.04kg,LANYAO)"
 },
 { 
       "id": 10,
